@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% comment %} Everything here is normal except needing to add the enctype, this is for any type of file upload {% endcomment %}
+<body>
+    <h1>Upload Images</h1>
+    <form action="/upload" method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <p><input type="file" name="image"></p>
+        <button>Upload Photo</button>
+    </form>
+</body>
+
+</html>
